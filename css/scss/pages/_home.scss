@@ -1,0 +1,1049 @@
+// Start Style The Service Section
+.service {
+    position: relative;
+
+    .service-container {
+        position: relative;
+        z-index: 1;
+        box-shadow: 0 17px 45px rgba(0, 0, 0, .08);
+        background-color: $white;
+        padding-bottom: 50px;
+
+        .service-text {
+            @extend %sectionTitle;
+
+            h2 {
+                @extend %sectionTitleH2;
+
+            }
+
+            p {
+                @extend %sectionTitleP;
+            }
+        }
+
+        .service-boxs {
+            @extend %flex;
+            justify-content: center;
+
+            .service-box {
+                position: relative;
+                flex-basis: 80%;
+                margin: 0 auto 30px;
+                background-color: $pink;
+                padding: 30px;
+
+                &:hover {
+                    .service-box-image {
+                        img {
+                            &:first-of-type {
+                                display: none;
+                            }
+
+                            &:last-of-type {
+                                display: block;
+                            }
+
+                        }
+                    }
+
+                    .service-box-icon {
+                        background-color: $blue;
+                        color: $white;
+                    }
+                }
+
+                .service-box-icon {
+                    display: inline-block;
+                    width: 80px;
+                    height: 80px;
+                    @include prefixer (border-radius, 50%);
+                    @include prefixer (transition, all 0.3s ease-in-out);
+                    background-color: $dark-pink;
+                    text-align: center;
+                    padding-top: 12px;
+                    font-size: 36px;
+                    margin-bottom: 25px;
+                }
+
+                .service-box-image {
+                    display: inline-block;
+                    position: absolute;
+                    right: 10%;
+
+                    img {
+                        &:last-of-type {
+                            display: none;
+                        }
+
+                    }
+                }
+
+                .service-box-text {
+                    margin-bottom: 20px;
+
+                    h3 {
+                        font-size: 24px;
+                    }
+                }
+
+                .service-box-link {
+                    a {
+                        display: block;
+                        color: $blue;
+                        font-weight: 500;
+                        margin-bottom: 10px;
+
+                    }
+
+                    svg {
+                        color: $blue;
+                        font-size: 21px;
+                    }
+                }
+
+                @media (min-width: 768px) {
+                    flex-basis: 45%;
+                }
+
+                @media (min-width: 992px) {
+                    flex-basis: 31%;
+                    margin: 0;
+                    justify-content: space-around;
+                }
+
+                @media (min-width: 1200px) {
+                    flex-basis: 25%;
+                }
+            }
+
+            @media (min-width: 992px) {
+                justify-content: space-around;
+                margin: 0 50px;
+            }
+        }
+    }
+
+    @media (min-width: 992px) {
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background-color: $blue;
+            z-index: -1;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        &:after {
+            content: "";
+            position: absolute;
+            width: 720px;
+            height: 720px;
+            top: -70px;
+            left: 15%;
+            background-color: $dark-blue;
+            @include prefixer(border-radius, 50%);
+        }
+    }
+}
+
+// Finish Style The Service Section
+
+// Start Style The Client Section
+.client {
+    padding: 100px 0 80px;
+
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: $white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                @include prefixer (filter, opacity(50%));
+
+                &:hover {
+                    @include prefixer (filter, opacity(1));
+                }
+            }
+
+        }
+    }
+
+}
+
+// Finish Style The Client Section
+
+// Start Style The Features Section
+.features {
+    .features-text {
+        @extend %sectionTitle;
+
+        h2 {
+            @extend %sectionTitleH2;
+        }
+
+        p {
+            @extend %sectionTitleP;
+        }
+    }
+
+    .features-boxs {
+        @extend %flexSpaceBetween;
+
+        .features-box {
+            box-shadow: 0 17px 45px rgba(0, 0, 0, .08);
+            flex-basis: 85%;
+            margin: 0 auto 50px;
+            padding: 30px;
+            position: relative;
+
+            &:hover {
+                background-color: $blue;
+
+                .features-box-icon,
+                .features-box-image {
+                    img {
+                        &:first-of-type {
+                            display: none;
+                        }
+
+                        &:last-of-type {
+                            display: block;
+                        }
+                    }
+                }
+
+                .features-box-text {
+
+                    h3,
+                    p {
+                        color: $white;
+                    }
+                }
+            }
+
+            .features-box-icon {
+                display: inline-block;
+
+                img {
+                    &:last-of-type {
+                        display: none;
+                    }
+                }
+            }
+
+            .features-box-image {
+                display: inline-block;
+                position: absolute;
+                right: 10%;
+
+                img {
+                    &:last-of-type {
+                        display: none;
+                    }
+                }
+            }
+
+            .features-box-text {
+
+                h3 {
+                    font-size: 24px;
+                    margin: 20px 0;
+                    color: $black;
+                }
+
+                p {
+                    color: $gray;
+                    margin: 10px 0;
+                }
+            }
+
+            @media (min-width: 768px) {
+                flex-basis: 47%;
+                margin: 0 0 30px 0;
+            }
+
+            @media (min-width: 992px) {
+                flex-basis: 31%;
+            }
+        }
+    }
+}
+
+// Finish Style The Features Section
+
+// Start Style The Portfolio Section
+.portfolio {
+    .portfolio-text {
+        @extend %sectionTitle;
+
+        h2 {
+            @extend %sectionTitleH2;
+        }
+
+        p {
+            @extend %sectionTitleP;
+        }
+    }
+
+    .portfolio-boxs {
+        @extend %flexSpaceBetween;
+
+        .portfolio-box {
+            flex-basis: 90%;
+            margin: auto;
+            margin-bottom: 30px;
+            position: relative;
+            box-shadow: 0 17px 45px rgba(0, 0, 0, .08);
+            background-color: rgba(0, 0, 0, .05);
+            overflow: hidden;
+
+            .portfolio-box-image {
+
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            .portfolio-box-text {
+                position: absolute;
+                background-color: $white;
+                bottom: -100%;
+                left: 50%;
+                @include prefixer(transform, translate(-50%));
+                padding: 25px 35px;
+                width: 90%;
+
+                h3 {
+                    font-size: 24px;
+                    line-height: 1.8em;
+                    color: $black;
+                }
+
+                p {
+                    color: $gray;
+                }
+            }
+
+            @media (min-width: 768px) {
+                flex-basis: 80%;
+            }
+
+            @media (min-width: 992px) {
+                flex-basis: 45%;
+            }
+
+            @media (min-width: 1200px) {
+                flex-basis: 47%;
+            }
+
+        }
+    }
+}
+
+// Finish Style The Portfolio Section
+
+// Start Style The Team Section
+.team {
+    .team-boxs {
+        @extend %flexSpaceBetween;
+        position: relative;
+        padding: 170px 0 100px;
+
+        .team-left-box {
+            flex-basis: 90%;
+            margin: 0 auto 50px;
+            text-align: center;
+
+            .team-box-icon {
+                color: $blue;
+
+                svg {
+                    &:not(:last-of-type) {
+                        margin-right: 9px;
+                    }
+                }
+            }
+
+            .team-box-text {
+                h2 {
+                    line-height: 1.5em;
+
+                    font: {
+                        size: 28px;
+                        weight: 600;
+                    }
+
+                    @media (min-width: 576px) {
+                        font-size: 32px;
+                    }
+
+                    @media (min-width: 992px) {
+                        font-size: 40px;
+                    }
+                }
+
+                p {
+                    font-size: 18px;
+                    color: $gray;
+                    margin-top: 20px;
+                    line-height: 2em;
+                }
+            }
+
+            @media (min-width: 992px) {
+                flex-basis: 47%;
+                margin: 0;
+                text-align: left;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 397px;
+                    height: 397px;
+                    @include prefixer(border-radius, 50%);
+                    background-color: #f0edf6;
+                    top: -15%;
+                    left: -40%;
+                    z-index: -1;
+                }
+            }
+
+            @media (min-width: 1200px) {
+
+                &::after {
+                    left: -30%
+                }
+            }
+
+        }
+
+        .team-right-box {
+            flex-basis: 90%;
+            margin: auto;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            box-shadow: 0 17px 45px rgba(0, 0, 0, .08);
+
+            .swiper-container2 {
+                position: relative;
+
+                .swiper-wrapper {
+                    .swiper-slide {
+                        .team-box {
+                            text-align: center;
+                            padding: 40px;
+
+                            .team-box-image {
+                                width: fit-content;
+                                margin: auto;
+                            }
+
+                            .team-box-first-text {
+                                p {
+                                    color: $gray;
+                                    margin: 20px 0;
+                                    line-height: 2em;
+                                }
+                            }
+
+                            .team-box-icon {
+                                svg {
+                                    margin-bottom: 20px;
+                                    color: $dark-pink;
+                                    display: none;
+
+                                    &:not(:last-of-type) {
+                                        margin-right: 13px;
+                                    }
+
+                                    @media (min-width: 768px) {
+                                        display: inline-block;
+                                    }
+                                }
+                            }
+
+                            .team-box-second-text {
+                                h3 {
+                                    text-transform: capitalize;
+                                    font-size: 24px;
+                                    color: $black;
+                                    line-height: 2em;
+                                }
+
+                                p {
+                                    color: $gray;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            @media (min-width: 992px) {
+                flex-basis: 47%;
+                margin: 0;
+            }
+        }
+    }
+}
+
+// Finish Style The Team Section
+
+// Start Style The Projects Section
+.projects {
+    .projects-boxs {
+        @extend %flexSpaceBetween;
+
+        .projects-box {
+            box-shadow: 0 17px 45px rgba(0, 0, 0, .08);
+            text-align: center;
+            flex-basis: 75%;
+            margin: 0 auto 50px;
+            padding: 40px;
+            @include prefixer (transition, all 0.5s ease-in-out);
+
+            &:hover {
+                background-color: $blue;
+
+                h2 {
+                    color: $white;
+                }
+
+                p {
+                    color: $white;
+                }
+
+                svg {
+                    color: $white;
+                }
+
+            }
+
+            h2 {
+                font-size: 60px;
+                color: $black;
+            }
+
+            p {
+                color: $gray;
+                margin-bottom: 20px;
+            }
+
+            svg {
+                color: $blue;
+            }
+
+            @media (min-width: 576px) {
+                flex-basis: 45%;
+            }
+
+            @media (min-width: 992px) {
+                flex-basis: 22%;
+                margin: 0;
+            }
+        }
+    }
+}
+
+// Finish Style The Projects Section
+
+// Start Style The Pricing Section
+.pricing {
+    .pricing-text {
+        @extend %sectionTitle;
+
+        padding: 150px 0 70px;
+
+        h2 {
+            @extend %sectionTitleH2;
+        }
+
+        p {
+            @extend %sectionTitleP;
+        }
+    }
+
+    .pricing-buttons {
+        border: 1px solid $blue;
+        width: fit-content;
+        padding: 12px 0.5px;
+        margin: 0 auto 50px;
+
+        a {
+            padding: 12px 24px;
+            color: $gray;
+            background-color: $white;
+
+            &.monthly {
+                margin-right: -5px;
+            }
+
+            &:hover {
+                color: $white;
+                background-color: $blue;
+            }
+
+            &.active {
+                background-color: $blue;
+                color: $white;
+            }
+        }
+    }
+
+    .pricing-boxs {
+        @extend %flex;
+        box-shadow: 0 17px 45px rgba(0, 0, 0, .08);
+        width: 85%;
+        margin: auto;
+
+        .pricing-box {
+            flex-basis: 100%;
+            padding: 30px;
+
+            &:first-of-type {
+                .pricing-box-details {
+                    p {
+                        svg {
+                            color: $very-dark-pink;
+                        }
+
+                        span {
+                            color: $very-dark-pink;
+                        }
+
+                        &:first-of-type {
+                            svg {
+                                color: $blue;
+                            }
+
+                            span {
+                                color: $gray;
+                            }
+                        }
+
+                        &:nth-of-type(4) {
+                            svg {
+                                color: $blue;
+                            }
+
+                            span {
+                                color: $gray;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &:nth-of-type(2) {
+                background-color: $blue;
+
+                .pricing-box-icon-text {
+                    .pricing-box-icon {
+                        svg {
+                            color: $white;
+                        }
+                    }
+
+                    .pricing-box-text {
+                        h3 {
+                            color: $white;
+                        }
+
+                        p {
+                            color: $white;
+                        }
+                    }
+                }
+
+                .pricing-box-price {
+                    p {
+                        color: $white;
+
+                        span {
+                            color: $white;
+                        }
+                    }
+                }
+
+                .pricing-box-link {
+                    border: 1px solid $white;
+                    background-color: $white;
+
+                    &:hover {
+                        background-color: $blue;
+
+                        a {
+                            color: $white;
+                        }
+                    }
+
+                    a {
+                        color: $blue;
+                    }
+                }
+
+                .pricing-box-details {
+                    p {
+
+                        svg {
+                            color: $white;
+                        }
+
+                        span {
+                            color: $white;
+                        }
+
+                        &:nth-of-type(3) {
+                            svg {
+                                color: $gray;
+                            }
+
+                            span {
+                                color: $gray;
+                            }
+                        }
+
+                        &:last-of-type {
+                            svg {
+                                color: $gray;
+                            }
+
+                            span {
+                                color: $gray;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .pricing-box-icon-text {
+                @extend %flex;
+                align-items: center;
+
+                .pricing-box-icon {
+                    svg {
+                        font-size: 56px;
+                        color: $blue;
+                        margin-right: 10px;
+                    }
+                }
+
+                .pricing-box-text {
+                    h3 {
+                        font: {
+                            size: 24px;
+                            weight: 600;
+                        }
+
+                        color: $black;
+                    }
+
+                    p {
+                        color: $gray;
+                        margin-top: 10px;
+                    }
+                }
+            }
+
+            .pricing-box-price {
+                p {
+                    font: {
+                        size: 60px;
+                        weight: 700;
+                    }
+
+                    color: $black;
+
+                    span {
+                        color: $gray;
+                        margin-left: 10px;
+                        vertical-align: middle;
+
+                        font: {
+                            size: 16px;
+                            weight: 400;
+                        }
+                    }
+
+                    &.yearly {
+                        display: none;
+                    }
+                }
+            }
+
+            .pricing-box-link {
+                border: 1px solid $blue;
+                padding: 12px 24px;
+                text-align: center;
+                margin: 20px 0 30px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $blue;
+
+                    a {
+                        color: $white;
+                    }
+                }
+
+                a {
+                    color: $blue;
+                    text-transform: capitalize;
+                }
+            }
+
+            .pricing-box-details {
+                p {
+                    &:not(:last-of-type) {
+                        margin-bottom: 20px;
+                    }
+
+                    svg {
+                        color: $blue;
+                    }
+
+                    span {
+                        margin-left: 10px;
+                        color: $gray;
+                    }
+                }
+            }
+
+            @media (min-width: 1200px) {
+                flex-basis: 33.333%;
+            }
+
+        }
+
+        @media (min-width: 768px) {
+            width: 80%;
+        }
+
+        @media (min-width: 992px) {
+            width: 60%;
+        }
+
+        @media (min-width: 1200px) {
+            width: 100%;
+            margin: 0;
+        }
+    }
+}
+
+// Finish Style The Pricing Section
+
+// Start Style The News Section
+.news {
+    margin-bottom: 150px;
+
+    .news-text {
+        @extend %sectionTitle;
+
+        h2 {
+            @extend %sectionTitleH2;
+        }
+
+        p {
+            @extend %sectionTitleP;
+        }
+    }
+
+    .news-boxs {
+
+        @extend %flexSpaceBetween;
+
+        .news-box {
+            flex-basis: 90%;
+            margin: 0 auto 50px;
+            padding: 30px;
+            box-shadow: 0 17px 45px rgba(0, 0, 0, .08);
+
+            .news-box-image {
+                width: 100%;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    @include prefixer(transition, all 0.3s ease-in-out);
+
+                }
+
+                &:hover {
+                    img {
+                        @include prefixer(transform, scale(1.1));
+                    }
+                }
+            }
+
+            .news-box-text {
+                p {
+                    margin: 20px 0;
+                    color: $gray;
+                }
+
+                h3 {
+                    color: $black;
+                    font-size: 24px;
+                    margin-bottom: 20px;
+                    font-weight: 600;
+                }
+            }
+
+            .news-box-link {
+                a {
+                    color: $blue;
+                    font-weight: 600;
+                    position: relative;
+
+                    svg {
+                        margin-left: 5px;
+                        vertical-align: middle;
+                        position: relative;
+                    }
+
+                    &:hover {
+                        svg {
+                            @include prefixer(animation, news 0.4s)
+                        }
+
+                        @keyframes news {
+                            0% {
+                                left: 8px
+                            }
+
+                            40% {
+                                opacity: 0;
+                                left: 0px
+                            }
+
+                            70% {
+                                opacity: 0;
+                                left: 25px
+                            }
+
+                            100% {
+                                opacity: 1;
+                                left: 0
+                            }
+                        }
+                    }
+                }
+            }
+
+            @media (min-width: 768px) {
+                flex-basis: 45%;
+                margin: 0 auto 30px;
+            }
+
+            @media (min-width: 992px) {
+                flex-basis: 31%;
+                margin: 0;
+            }
+        }
+    }
+}
+
+// Finish Style The News Section
+
+// Start Style The Works Section
+.works {
+    background-color: $blue;
+    position: relative;
+    overflow: hidden;
+
+    .works-box {
+        @extend %flexSpaceBetween;
+        padding: 60px 0;
+
+        .works-box-text {
+            flex-basis: 95%;
+            margin: 50px auto 80px;
+            text-align: center;
+
+            h2 {
+                color: $white;
+
+                font: {
+                    size: 28px;
+                    weight: 600;
+                }
+
+                @media (min-width: 576px) {
+                    font-size: 32px;
+                }
+
+                @media (min-width: 992px) {
+                    font-size: 40px;
+                }
+            }
+
+            p {
+                color: $white;
+                margin: 20px 0 50px;
+            }
+
+            a {
+                border: 1px solid $white;
+                padding: 12px 24px;
+                background-color: $white;
+                color: $blue;
+
+                &:hover {
+                    background-color: $blue;
+                    color: $white;
+                }
+            }
+
+            @media (min-width: 992px) {
+                flex-basis: 55%;
+                margin: 0;
+                text-align: left;
+            }
+        }
+
+        .works-box-image {
+            flex-basis: 85%;
+            margin: auto;
+
+            img {
+                width: 100%;
+            }
+
+            @media (min-width: 992px) {
+                flex-basis: 40%;
+                margin: 0;
+            }
+        }
+
+    }
+
+    @media (min-width: 1200px) {
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: -135%;
+            left: 11%;
+            width: 750px;
+            height: 750px;
+            overflow: hidden;
+            background-color: $dark-blue;
+            @include prefixer(border-radius, 50%);
+        }
+    }
+}
+
+// Finish Style The Works Section

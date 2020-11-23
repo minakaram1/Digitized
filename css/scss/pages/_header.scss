@@ -1,0 +1,501 @@
+// Start Style The Website Header
+header {
+    background-color: $blue;
+    position: relative;
+    overflow: hidden;
+
+    .top-bar {
+        padding-top: 20px;
+        @extend %flexSpaceBetween;
+        align-items: center;
+        height: 70px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 720px;
+            height: 720px;
+            top: -310px;
+            right: -310px;
+            background-color: $dark-blue;
+            @include prefixer(border-radius, 50%);
+
+            @media (min-width: 992px) {
+                top: -110px;
+                right: -110px;
+            }
+        }
+
+        .logo {
+            flex-basis: 20%;
+            position: relative;
+            z-index: 1;
+
+            h3 {
+                color: $white;
+                font-size: 33px;
+            }
+
+            @media (min-width: 576px) {
+                left: 35px;
+            }
+
+            @media (min-width: 1200px) {
+                left: auto;
+                flex-basis: 17%;
+            }
+        }
+
+        nav {
+            flex-basis: 50%;
+            @extend %flexSpaceBetween;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            @include prefixer(transform, translate(-50%, -50%));
+            z-index: 9999;
+            display: none;
+
+            ul {
+                position: relative;
+                z-index: 1;
+                font-weight: 500;
+                flex-basis: 100%;
+                @extend %flexSpaceBetween;
+                flex-direction: column;
+                text-align: center;
+
+                li {
+                    position: relative;
+                    cursor: pointer;
+                    margin-bottom: 25px;
+
+                    &:last-of-type {
+                        margin-top: 20px;
+
+                        a {
+                            background-color: $blue;
+                            padding: 14px 24px;
+
+                            &:hover {
+                                background: none;
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        ul {
+                            @media (min-width:1200px) {
+                                display: block;
+                            }
+                        }
+                    }
+
+                    a {
+                        font-size: 18px;
+
+                        &.button-white,
+                        &.button-none {
+                            padding: 12px 24px;
+                        }
+
+                        &:hover {
+                            color: $blue;
+                        }
+
+                        @media (min-width:1200px) {
+                            padding: 12px 14px;
+
+                            &:hover {
+                                color: $blue;
+                                background-color: $white;
+                            }
+                        }
+                    }
+
+                    ul {
+                        display: none;
+                        position: relative;
+                        z-index: 99999;
+
+                        li {
+                            padding: 5px 0;
+                            @include prefixer (transition, all 0.5s ease-in-out);
+                            margin: 0;
+
+                            &:hover {
+                                background: none;
+
+                                a {
+                                    color: $white;
+                                }
+                            }
+
+                            a {
+                                color: $white;
+
+                                &:hover {
+                                    color: $blue;
+                                }
+
+                                @media (min-width:1200px) {
+                                    color: $gray;
+
+                                    &:hover {
+                                        color: $white;
+                                        background: none;
+                                    }
+                                }
+                            }
+
+                            &:last-of-type {
+                                margin-top: 0;
+
+                                a {
+                                    background: none;
+                                    padding: 0;
+                                    color: $white;
+
+                                    &:hover {
+                                        color: $blue;
+                                    }
+
+                                    @media (min-width:1200px) {
+                                        color: $gray;
+
+                                        &:hover {
+                                            background: none;
+                                        }
+                                    }
+                                }
+
+                                @media (min-width:1200px) {
+                                    &:hover {
+                                        a {
+                                            color: $white;
+                                        }
+                                    }
+                                }
+                            }
+
+                            @media (min-width:1200px) {
+                                padding: 12px 32px;
+                                width: 270px;
+
+                                &:hover {
+                                    background-color: $blue;
+                                }
+
+                            }
+                        }
+
+                        @media (min-width:1200px) {
+                            position: absolute;
+                            padding: 15px 0;
+                            top: 37px;
+                            background-color: $white;
+                            box-shadow: 0 17px 45px rgba(0, 0, 0, .08);
+                        }
+                    }
+
+                    @media (min-width:1200px) {
+                        margin-bottom: 0;
+
+                        &:nth-child(8) {
+                            display: none;
+                        }
+
+                        svg {
+                            display: none;
+                        }
+                    }
+
+                }
+
+                @media (min-width:1200px) {
+                    justify-content: space-around;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                }
+            }
+
+            @media (min-width:1200px) {
+                flex-basis: 53%;
+                position: relative;
+                display: flex;
+                top: auto;
+                left: auto;
+                @include prefixer(transform, translate(0, 0));
+            }
+        }
+
+        .form {
+            position: relative;
+            flex-basis: 22%;
+            z-index: 999;
+            display: none;
+
+            ul {
+                @extend %flexSpaceBetween;
+            }
+
+            @media (min-width: 576px) {
+                display: block;
+                flex-basis: 43%;
+            }
+
+            @media (min-width: 768px) {
+                flex-basis: 32%;
+            }
+
+            @media (min-width: 992px) {
+                flex-basis: 24%;
+            }
+
+            @media (min-width: 1200px) {
+                flex-basis: 19%;
+            }
+        }
+
+        .the-toggler {
+            cursor: pointer;
+            position: absolute;
+            z-index: 99999999999999999;
+            @include prefixer(transform, rotate(180deg));
+            right: 20px;
+
+            .the-toggler-line {
+                height: 3px;
+                background-color: $white;
+                margin-bottom: 3px;
+                @include prefixer(transition, all 0.5s ease-in-out);
+
+                &:first-of-type {
+                    width: 21px;
+                }
+
+                &:nth-of-type(2) {
+                    width: 25px;
+                    height: 3.5px;
+                }
+
+                &:last-of-type {
+                    width: 16px;
+                    height: 3.5px;
+                }
+            }
+
+            &:hover {
+                .the-toggler-line {
+                    width: 25px;
+                }
+            }
+
+            &.close-sign {
+                .the-toggler-line {
+                    width: 25px;
+
+                    &:first-of-type {
+                        @include prefixer(transform, translateX(1px) rotate(45deg));
+                    }
+
+                    &:nth-of-type(2) {
+                        @include prefixer(transform, translateY(-6px) rotate(-45deg));
+                    }
+
+                    &:last-of-type {
+                        display: none
+                    }
+                }
+            }
+
+            @media (min-width: 576px) {
+                right: auto;
+                @include prefixer(transform, rotate(0));
+            }
+
+            @media (min-width: 1200px) {
+                display: none;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            flex-wrap: nowrap;
+        }
+    }
+
+    .banner {
+        position: relative;
+        z-index: 0;
+
+        .banner-boxs {
+            @extend %flexSpaceBetween;
+            align-items: center;
+            padding-top: 100px;
+            padding-bottom: 120px;
+            position: relative;
+            z-index: 1;
+
+            .banner-text-box {
+                flex-basis: 90%;
+                margin: auto;
+                text-align: center;
+
+                h1 {
+                    font: {
+                        size: 30px;
+                        weight: 600;
+                    }
+
+                    color: $white;
+
+                    @media (min-width: 576px) {
+                        font-size: 32px;
+                    }
+
+                    @media (min-width: 768px) {
+                        font-size: 40px;
+                    }
+
+                    @media (min-width: 1200px) {
+                        font-size: 60px;
+                    }
+                }
+
+                p {
+                    margin: 50px 0;
+                    line-height: 2em;
+                    color: $white;
+                    font-size: 18px;
+
+                    @media (min-width: 992px) {
+                        margin: 20px 0 30px;
+                    }
+                }
+
+                a {
+                    font-size: 17px;
+                    width: fit-content;
+
+                    &:not(:last-of-type) {
+                        margin: 0 auto 50px;
+                        display: block;
+
+                        @media (min-width: 576px) {
+                            display: inline-block;
+                            margin: 0 20px 0 0;
+                        }
+                    }
+
+                    &:last-of-type {
+                        margin-left: 20px;
+                    }
+
+                }
+
+                .animated-circle {
+                    display: inline-block;
+                    width: 50px;
+                    height: 50px;
+                    @include prefixer(border-radius, 50%);
+                    color: $white;
+                    background-color: $black;
+                    text-align: center;
+                    position: relative;
+                    top: -15px;
+                    z-index: 1;
+                    cursor: pointer;
+
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        width: 50px;
+                        height: 50px;
+                        left: 0;
+                        border: 1px solid $black;
+                        @include prefixer(border-radius, 50%);
+                        @include prefixer(animation, home3pulse1 1.5s linear .8s infinite);
+                    }
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        width: 50px;
+                        height: 50px;
+                        left: 0;
+                        border: 1px solid $black;
+                        @include prefixer(border-radius, 50%);
+                        @include prefixer(animation, home3pulse1 1.5s linear infinite);
+                    }
+
+                    @keyframes home3pulse1 {
+                        0% {
+                            transform: scale(1);
+                            opacity: 0
+                        }
+
+                        50% {
+                            transform: scale(1.2);
+                            opacity: 1
+                        }
+
+                        100% {
+                            transform: scale(1.6);
+                            opacity: 0
+                        }
+                    }
+
+                    svg {
+                        font-size: 18px;
+                        position: relative;
+                        top: 30%;
+                    }
+                }
+
+                @media (min-width: 992px) {
+                    flex-basis: 45%;
+                    margin: 0;
+                    text-align: left;
+                }
+
+            }
+
+            .banner-image-box {
+                flex-basis: 70%;
+                margin: 50px auto;
+
+                img {
+                    width: 100%;
+                }
+
+                @media (min-width: 576px) {
+                    flex-basis: 90%;
+                }
+
+                @media (min-width: 768px) {
+                    flex-basis: 70%;
+                }
+
+                @media (min-width: 992px) {
+                    flex-basis: 45%;
+                    margin: 0;
+                }
+
+                @media (min-width: 1200px) {
+                    flex-basis: 42%;
+                }
+            }
+
+            @media (min-width: 768px) {
+                padding-bottom: 50px;
+            }
+
+            @media (min-width: 992px) {
+                padding-bottom: 120px;
+            }
+        }
+
+    }
+}
+
+// Finish Style The Website Header
